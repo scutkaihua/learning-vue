@@ -1,0 +1,31 @@
+################################################################################
+# 全局安装 vue-cli
+$ cnpm install --global vue-cli
+
+# 创建一个基于 webpack 模板的新项目
+$ vue init webpack appfront
+  全部Yes
+
+#安装依赖
+  cd appfront
+  cnpm install
+
+#运行
+  npm run dev
+
+
+################################################################################
+使用vscode 编写 vue
+1.安装格式化插件  vetur
+  https://marketplace.visualstudio.com/items?itemName=octref.vetur
+
+  修改为字符串 单引号
+  File->Preference->Setting
+  首选项->设置。输入框输入"vetur.format.defaultFormatter.js"
+              把
+              "vetur.format.defaultFormatter.js": "prettier",
+              改为 
+              "vetur.format.defaultFormatter.js": "vscode-typescript"
+
+  在 .eslintrc.js 的rules 中添加 :
+              "space-before-function-paren": 0,

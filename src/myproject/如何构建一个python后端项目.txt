@@ -1,0 +1,65 @@
+1.如何构建myproject后端项目
+ (1).pip install Django
+     django-admin startproject myproject
+     cd myproject
+     python manage.py startapp myapp
+
+ (2).配置sql,在myproject/settings.py
+             DATABASES = {
+                'default': {
+                    'ENGINE': 'django.db.backends.mysql',
+                    'NAME': 'helloworld',
+                    'USER': 'kaihua',
+                    'PASSWORD': '123456',
+                    'HOST': 'localhost',
+                }
+            }
+
+  (3)编写 myapp/models.py
+            from __future__ import unicode_literals
+            from django.db import models
+            class User(models.Model):
+                name = models.CharField(max_length=50)
+                email = models.CharField(max_length=50)
+                phone = models.CharField(max_length=11)
+                def __unicode__(self):
+                    return self.name
+  (4)编写 myapp/views.py
+            from django.views.decorators.http import require_http_methods
+            from django.http import JsonResponse
+            from django.core import serializers
+            from myapp.models import User
+            import json
+            # Create your views here.
+            @require_http_methods(["GET"])
+            def show_user(request):
+                response = {}
+                try:
+                    users = User.objects.all()
+                    response['list'] = json.loads(serializers.serialize("json", users))
+                    response['msg'] = 'success'
+                    response['error_num'] = 0
+                except Exception as e:
+                    response['msg'] = str(e)
+                    response['error_num'] = 1
+                return JsonResponse(response)
+  (5)添加 myapp/urls.py
+            from django.conf.urls import url, include
+            from myapp.views import show_user
+            urlpatterns = [
+                url(r'show_user$', show_user, ),
+  (6)将 myapp/urls.py 添加到myproject/urls.py
+            url(r'api/', include(myapp.urls)),
+
+  (7)避免 Did you install mysqlclient? 错误
+     在 myproject/__init__.py中添加
+            import pymysql
+            pymysql.version_info = (1, 4, 13, "final", 0)
+            pymysql.install_as_MySQLdb()
+  (8)同步mysql ORM
+     python manage.py migrate  或者:
+     python manage.py makemigrations myapp  //会在 myapp/migrations/下 产生一个 0001_initial.py文件映射数据库对象
+
+  (9)运行后端服务
+     python manage.py runserver
+
