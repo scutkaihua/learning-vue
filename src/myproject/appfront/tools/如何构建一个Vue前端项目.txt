@@ -26,6 +26,20 @@ $ vue init webpack appfront
               "vetur.format.defaultFormatter.js": "prettier",
               改为 
               "vetur.format.defaultFormatter.js": "vscode-typescript"
+              {
+                  "vetur.format.defaultFormatterOptions": {
 
+                      "prettier": {
+                          "semi": false,    //不加分号
+                          "singleQuote": true,  //用单引
+                          // 禁止随时添加逗号
+                          "trailingComma": "none"
+                      }
+                  },
+                  "[vue]": {
+                      "editor.defaultFormatter": "octref.vetur"
+                  }
+              }
   在 .eslintrc.js 的rules 中添加 :
               "space-before-function-paren": 0,
+
