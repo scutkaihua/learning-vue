@@ -3,7 +3,7 @@
     <h1>{{ msg }}</h1>
     <input type="text" v-model="a" />
     <input type="text" v-model="b" />
-    <h3>{{ counter }}</h3>
+    <h3 v-test>{{ counter }}</h3>
     <h3>{{ cc | dataFormat }}</h3>
   </div>
 </template>
@@ -35,6 +35,11 @@ export default {
       return parseFloat(this.a) + parseFloat(this.b)
     }
   },
+  directives: {
+    'test': function (el, binding, vnode) {
+      el.style.border = '1px solid red'
+    }
+  }
   // filters: {
   //   dataFormat: function (val) {
   //     console.log('val:' + val)

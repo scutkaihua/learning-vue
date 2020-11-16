@@ -35,6 +35,18 @@ const { filter }=require("vue/types/umd");
         filter:{    //1.过滤器,多用于格式化  {{msg|dataFormat}}
             dataFormat:function(av){ if(parseFloat(av)<0)av=-parseFloat(av)}
         },
+        directives:{//2.自定义指令  用法  < el - button @click='editClick' type = "primary"  v-test  > 编辑</el - button >
+            'test':function(el,binding,vnode){
+                el.style.border = "1px solid red";
+            }
+        },
+
+        //========杂项=============================================//
+        name:'test',        //允许组件模板递归地调用自身。注意，组件在全局用 Vue.component() 注册时，全局 ID 自动作为组件的 name
+        parent:HelloWorld,  //指定父实例   子实例可以用 this.$parent 访问父实例，子实例被推入父实例的 $children 数组中
+        mixins:HelloWorld,  //将组件内部的内容如data等方法、method等属性与父组件相应内容进行合并,mixins中的组件的data与methods会被覆盖
+        extends:HelloWorld, //扩展单文件组件,相当于 父组件 + 子组件
+
 
     }
 );
