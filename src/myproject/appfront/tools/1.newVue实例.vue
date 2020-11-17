@@ -40,7 +40,9 @@ const { filter }=require("vue/types/umd");
                 el.style.border = "1px solid red";
             }
         },
-
+        components:{//3.注册组件: 局部注册组件，注册后的组件只有在该实例作用域下有效,组件中也可以包括组件
+            HelloWorld
+            },
         //========杂项=============================================//
         name:'test',        //允许组件模板递归地调用自身。注意，组件在全局用 Vue.component() 注册时，全局 ID 自动作为组件的 name
         parent:HelloWorld,  //指定父实例   子实例可以用 this.$parent 访问父实例，子实例被推入父实例的 $children 数组中
