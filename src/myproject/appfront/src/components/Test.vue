@@ -5,9 +5,6 @@
     <h3 v-test>{{ counter }}</h3>
     <h3>{{ cc | dataFormat }}</h3>
     <h1 @click="personClick">this is {{ msg }}</h1>
-    <Person />
-    <Person />
-    <Person />
   </div>
 </template>
 
@@ -24,7 +21,10 @@ export default {
   },
   methods: {
     personClick: function () {
-      this.msg = 'Test'
+      this.change('Test')
+    },
+    change: function (d) {
+      this.msg = 'change in test:' + d
     }
   },
   watch: {
@@ -47,12 +47,6 @@ export default {
       el.style.border = '1px solid red'
     }
   },
-  components: { Person },
-  // filters: {
-  //   dataFormat: function (val) {
-  //     console.log('val:' + val)
-  //   }
-  // }
-  extends: Person
+  mixins: [Person]
 }
 </script>

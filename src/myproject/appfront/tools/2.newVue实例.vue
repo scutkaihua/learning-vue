@@ -1,5 +1,8 @@
 //一个典型的Vue实例
-
+<!--参考资料
+  1.vue 对象参数 https://www.jianshu.com/p/cf2611ed1b1f
+  2.vue 基础知识 https://cn.vuejs.org/v2/guide/custom-directive.html
+!-->
 import Vue from 'vue'
 
 <script>
@@ -46,9 +49,20 @@ const { filter }=require("vue/types/umd");
         //========杂项=============================================//
         name:'test',        //允许组件模板递归地调用自身。注意，组件在全局用 Vue.component() 注册时，全局 ID 自动作为组件的 name
         parent:HelloWorld,  //指定父实例   子实例可以用 this.$parent 访问父实例，子实例被推入父实例的 $children 数组中
-        mixins:HelloWorld,  //将组件内部的内容如data等方法、method等属性与父组件相应内容进行合并,mixins中的组件的data与methods会被覆盖
-        extends:HelloWorld, //扩展单文件组件,相当于 父组件 + 子组件
-
+        mixins:[HelloWorld],//合并多个组件，多继承,  优先使用当前组件的data与方法,watch/HOOKS 生命周期钩子=>合并成数组，先调用 mixins/extends,再调用当前组件的
+        extends:HelloWorld, //扩展单文件组件,单继承，合并方式与mixins相同
+        delimiters:['${','}'],//修改插值的符号为 ${msg}, 默认为 {{msg}}
+        functional:true,    //使组件无状态（没有 data ）和无实例（没有 this 上下文）。他们用一个简单的 render 函数返回虚拟节点使他们更容易渲染。
+                            //没有生命周期，没有实例，只能看作是函数集构成的类
+        //========生命周期钩子=====================================//
+        beforeCreate:function(){},//1.创建前data,methods,watcher,dom 无
+        created:function(){},     //2.已创建data,methods,watcher,有 dom 无
+        beforeMount:function(){}, //3.加载前data,methods,watcher,dom 有
+        mounted:function(){},     //4.已加载data,methods,watcher,dom 有,html渲染完成
+        beforeUpdate:function(){},//5.更新前,data已改变,dom未改变,html未更新
+        updated:function(){},     //6.已更新,data已改变,dom已更新,html已更新
+        beforeDestroy:function(){},//7.销毁前,数据不变
+        destroyed:function(){},   //8.销毁后,外部销毁:v-if='show',销毁组件,销毁dom   内部销毁:this.$destory(),销毁组件,保留dom
 
     }
 );

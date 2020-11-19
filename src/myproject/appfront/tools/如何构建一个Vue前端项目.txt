@@ -43,3 +43,8 @@ $ vue init webpack appfront
   在 .eslintrc.js 的rules 中添加 :
               "space-before-function-paren": 0,
 
+################################################################################
+django + vue 前后端分离的项目参考:
+https://segmentfault.com/p/1210000010550731/read
+https://github.com/rogerlh/django_with_vue/tree/master/myproject
+
