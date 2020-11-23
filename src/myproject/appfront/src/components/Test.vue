@@ -1,52 +1,28 @@
 <template>
   <div id="test">
-    <input type="text" v-model="a" />
-    <input type="text" v-model="b" />
-    <h3 v-test>{{ counter }}</h3>
-    <h3>{{ cc | dataFormat }}</h3>
-    <h1 @click="personClick">this is {{ msg }}</h1>
+    <h3 @click="clickCounter">{{ counter }}</h3>
+    <h3>{{ counter > 5 ? bigger : less }}</h3>
+    <h3 v-text="counter"></h3>
+    <p v-html="html"></p>
   </div>
 </template>
 
 <script>
-import Person from './Person.vue'
 export default {
   el: '#test',
   data() {
     return {
-      a: '',
-      b: '',
-      counter: ''
+      counter: 1,
+      ok: true,
+      less: 'counter <= 5',
+      bigger: 'counter >5',
+      html: '<span style="color: red">This should be red</span>'
     }
   },
   methods: {
-    personClick: function () {
-      this.change('Test')
-    },
-    change: function (d) {
-      this.msg = 'change in test:' + d
+    clickCounter: function () {
+      this.counter++ // ++
     }
-  },
-  watch: {
-    a: function (val) {
-      console.log('a=>')
-      this.counter = parseFloat(this.a) + parseFloat(this.b)
-    },
-    b: function (val) {
-      console.log('b=>')
-      this.counter = parseFloat(this.a) + parseFloat(this.b)
-    }
-  },
-  computed: {
-    cc() {
-      return parseFloat(this.a) + parseFloat(this.b)
-    }
-  },
-  directives: {
-    test: function (el, binding, vnode) {
-      el.style.border = '1px solid red'
-    }
-  },
-  mixins: [Person]
+  }
 }
 </script>
