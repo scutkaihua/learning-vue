@@ -1,0 +1,10 @@
+<template>
+  <div>
+    <form action="post">
+      <meter value="2" min="0" max="10">2 out of 10</meter><br>
+      <meter value="0.6">60%</meter>
+    </form>
+  </div>
+</template>
+<style>
+</style>

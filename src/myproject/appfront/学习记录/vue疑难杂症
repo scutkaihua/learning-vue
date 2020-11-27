@@ -1,0 +1,18 @@
+################################################################################
+1. vue-cli安装less出现错误UnhandledPromiseRejectionWarning: TypeError: loaderContext.getResolve is not a func
+    出现这个原因只要是less的版本过高
+    解决办法：
+    降低版本
+    1 先卸载 【npm uninstall less-loader】
+    2 重装版本 【npm install less-loader@4.1.0 --save】
+
+2. Vue项目中eslint提示 'xxx' is defined but never used
+
+        解决方法是在package.json文件的rules中写入 "no-unused-vars": "off"
+
+3. Expected space or tab after ‘//‘ in comment
+   注释后面必须有空格
+   找到build/webpack.base.conf.js :  去掉createLintingRule()
+                                    (config.dev.useEslint ? [
+                                        //createLintingRule()
+                                    ] : []),
