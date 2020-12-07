@@ -40,93 +40,60 @@
 <!-- 8. 主体 body-->
 <!-- 元素参考： https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element-->
 <!--           https://www.runoob.com/tags/html-reference.html-->
-
-<body>
     <!--===========================元素1.内容分区=================================-->
-    <address>
-        <某个人或某个组织（等等）的联系信息>
-            <article>
-                <独立结构>帖子 杂志 新闻文章 博客 评论​​
-                    <aside>
-                        <和页面内容几乎无关的部分>，拆分出来而不会景程整体
-                            <footer>
-                                <页脚>。一个页脚通常包含该章节作者、版权数据或者与文档相关的链接等信息。
-                                    <header>
-                                        <介绍性内容>,title,base,meta,link,script,style
-                                            <h1>, <h2>, <h3>, <h4>, <h5>, <h6> HTML <h1>–<h6>
-                                                                            <标题(Heading)>
-                                                                                <h1> 级别最高，而 <h6> 级别最低。
-                                                                                        <hgroup>
-                                                                                            <段的标题> 它规定了在文档轮廓里（the
-                                                                                                outline of the document
-                                                                                                ）的单一标题是它所属的隐式或显式部分的标题。
-                                                                                                <main> 呈现了文档的
+<address>   <某个人或某个组织（等等）的联系信息>
+<article>   <独立结构>帖子 杂志 新闻文章 博客 评论​​
+<aside>     <和页面内容几乎无关的部分>，拆分出来而不会景程整体
+<footer>    <页脚>。一个页脚通常包含该章节作者、版权数据或者与文档相关的链接等信息。
+<header>    <介绍性内容>,title,base,meta,link,script,style
+<h1>, <h2>, <h3>, <h4>, <h5>, <h6> HTML <h1>–<h6>
+            <标题(Heading)><h1> 级别最高，而 <h6> 级别最低。
+<hgroup>    <段的标题> 它规定了在文档轮廓里（the outline of the document）的单一标题是它所属的隐式或显式部分的标题。
+<main>      呈现了文档的
+<body>      或应用的主体部分
+<nav>       <导航链接> 导航部分的常见示例是菜单，目录和索引。
+<section>   <独立部分> 它没有更具体的语义元素来表示，一般来说会有包含一个标题。
 
-                                                                                                    <body> 或应用的主体部分
-                                                                                                        <nav>
-                                                                                                            <导航链接>
-                                                                                                                导航部分的常见示例是菜单，目录和索引。
-                                                                                                                <section>
-                                                                                                                    <独立部分>
-                                                                                                                        ，它没有更具体的语义元素来表示，一般来说会有包含一个标题。
+<!--===========================元素2.文本=====================================-->
+<!---------------------------------------------------------->
+<blockquote>    <块级引用元素>  内容会有一定的缩进
 
-                                                                                                                        <!--===========================元素2.文本=====================================-->
-                                                                                                                        <!---------------------------------------------------------->
-                                                                                                                        <blockquote>
-                                                                                                                            <块级引用元素>
-                                                                                                                                内容会有一定的缩进
+<!---------------------------------------------------------->
+<dl> 列表，通常用于展示词汇表或者元数据
+    (键-值对列表)
+    <dl>
+        <dt>关键字</dt><!--键-->
+        <dd>数值</dd><!--值-->
+    </dl>
 
-                                                                                                                                <!---------------------------------------------------------->
-                                                                                                                                <dl> 列表，通常用于展示词汇表或者元数据
-                                                                                                                                    (键-值对列表)
-                                                                                                                                    <dl>
-                                                                                                                                        <dt>关键字
-                                                                                                                                        </dt>
-                                                                                                                                        <!--键-->
-                                                                                                                                        <dd>数值
-                                                                                                                                        </dd>
-                                                                                                                                        <!--值-->
-                                                                                                                                    </dl>
+<!---------------------------------------------------------->
+<div>
+块级(block-level)元素
 
-                                                                                                                                    <!---------------------------------------------------------->
-                                                                                                                                    <div>
-                                                                                                                                        块级(block-level)元素
+<!---------------------------------------------------------->
+<figure>规定独立的流内容（图像、图表、照片、代码等等）<figcaption>定义标题</figcaption>
+        <figure>
+            <figcaption>黄浦江上的的卢浦大桥</figcaption>
+            <img src="shanghai_lupu_bridge.jpg"width="350"height="234" />
+        </figure>
 
-                                                                                                                                        <!---------------------------------------------------------->
-                                                                                                                                        <figure>
-                                                                                                                                            规定独立的流内容（图像、图表、照片、代码等等）
-                                                                                                                                            <figcaption>
-                                                                                                                                                定义标题
-                                                                                                                                            </figcaption>
-                                                                                                                                            <figure>
-                                                                                                                                                <figcaption>
-                                                                                                                                                    黄浦江上的的卢浦大桥
-                                                                                                                                                </figcaption>
-                                                                                                                                                <img src="shanghai_lupu_bridge.jpg"
-                                                                                                                                                    width="350"
-                                                                                                                                                    height="234" />
-                                                                                                                                            </figure>
+<!---------------------------------------------------------->
+<hr>
+水平线
 
-                                                                                                                                            <!---------------------------------------------------------->
-                                                                                                                                            <hr>
-                                                                                                                                            水平线
+<!---------------------------------------------------------->
+<ul> 无序列表
+    <ul>
+        <li></li>
+    </ul>
 
-                                                                                                                                            <!---------------------------------------------------------->
-                                                                                                                                            <ul> 无序列表
-                                                                                                                                                <ul>
-                                                                                                                                                    <li>
-                                                                                                                                                    </li>
-                                                                                                                                                </ul>
-
-                                                                                                                                                <!---------------------------------------------------------->
-                                                                                                                                                <ol> 有序列表
-                                                                                                                                                    <ol>
-                                                                                                                                                        <li>
-                                                                                                                                                        </li>
-                                                                                                                                                    </ol>
-                                                                                                                                                    <p> 段落。或以垂直的空白隔离或以首行缩进。
-                                                                                                                                                    <p> 是块级元素。
-                                                                                                                                                    <pre>	    预定义格式文本,文本中的空白符（<空格和换行符>）都会显示出来
+<!---------------------------------------------------------->
+<ol> 有序列表
+    <ol>
+    <li></li>
+    </ol>
+<p> 段落。或以垂直的空白隔离或以首行缩进。<p> 是块级元素。
+<pre></pre>预定义格式文本,文本中的空白符（<空格和换行符>）都会显示出来
 
 <!--===========================元素3.内联文本=================================-->
 
@@ -286,31 +253,68 @@
 <meter>	    数据范围（像进度)
                 <meter value="2" min="0" max="10">2 out of 10</meter><br>
                 <meter value="0.6">60%</meter>
-<optgroup>	在一个web表单中, HTML元素 <optgroup> 会创建包含在一个 <select> 元素中的一组选项
-<option>	在web表单中,  HTML元素 <option>  用于定义在<select>,  <optgroup> 或<datalist> 元素中包含的项。<option> 可以在弹出窗口和 html 文档中的其他项目列表中表示菜单项。
-<output>	HTML <output> 标签表示计算或用户操作的结果。
-<progress>	HTML中的progress (<progress>) 元素用来显示一项任务的完成进度.虽然规范中没有规定该元素具体如何显示,浏览器开发商可以自己决定,但通常情况下,该元素都显示为一个进度条形式.
-<select>	HTML <select> 元素表示一个控件，提供一个选项菜单：
-<textarea>	HTML <textarea> 元素表示一个多行纯文本编辑控件。
+
+<select>    选项菜单
+ 
+            <select>
+                <optgroup label="Swedish Cars">        <!--一组选项:Swedish Cars-->
+                    <option value="volvo">Volvo</option>   <!--选项-->
+                    <option value="saab">Saab</option>
+                </optgroup>
+                <optgroup label="German Cars">
+                    <option value="mercedes">Mercedes</option>
+                    <option value="audi">Audi</option>
+                </optgroup>
+            </select>
+    
+<output>	计算或操作的结果
+            <form oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+                0<input type="range" id="a" value="50">100 +<input type="number" id="b" value="50">
+                =<output name="x" for="a b"></output>
+            </form>
+
+<progress>	进度
+            例子:
+            <progress id ="pr" value="2" max="100"></progress>
+            <script>
+                var v = document.getElementById("pr");
+                var c = 0;
+                function sleep(time){return new Promise((resolve) => setTimeout(resolve, time));}
+                async function run(){
+                    while(c<100)
+                    {c+=1;v.value = c;await sleep(100);}//100ms ++
+                }
+                run();
+            </script>
+
+<textarea>	多行纯文本编辑
+
 <!--===========================元素8.脚本=====================================-->
-<canvas>	<canvas>元素可被用来通过脚本（通常是JavaScript）绘制图形。比如,它可以被用来绘制图形,制作图片集合,甚至用来实现动画效果。你可以(也应该)在元素标签内写入可提供替代的的代码内容，这些内容将会在在旧的、不支持<canvas>元素的浏览器或是禁用了JavaScript的浏览器内渲染并展现。
-<noscript>	如果页面上的脚本类型不受支持或者当前在浏览器中关闭了脚本，则在 HTML <noscript> 元素中定义脚本未被执行时的替代内容。
-<script>	HTML </script> 元素用于嵌入或引用可执行脚本
+<canvas>	画布,绘制图形
+
+<noscript>	浏览器不支持script时，noscript被显示出来
+
+<script>	可执行脚本</script>
+
 <!--===========================元素9.编辑标识=================================-->
-<del>	HTML的<del>标签表示一些被从文档中删除的文字内容。比如可以在需要显示修改记录或者源代码差异的情况使用这个标签。<ins>标签的作用恰恰于此相反：表示文档中添加的内容。
-<ins>	
+<del>	删除的文字内容,中划线
+<ins>	添加的内容，   下划线
 <!--===========================元素10.交互元素================================-->
-<details>	HTML <details>元素可创建一个挂件，仅在被切换成展开状态时，它才会显示内含的信息。
-<dialog>	HTML <dialog> 元素表示一个对话框或其他交互式组件，例如一个检查器或者窗口。
-<menu>	HTML <menu> 元素呈现了一组用户可执行或激活的命令。这既包含了可能出现在屏幕顶端的列表菜单，也包含了那些隐藏在按钮之下、当点击按钮后显示出来的文本菜单。
-<menuitem>	用户可以通过HTML <menuitem> 元素生成一个弹出式菜单。这包括上下文菜单，以及按钮可能附带的菜单。
-<summary>	HTML <summary> 元素 用作 一个<details>元素的一个内容的摘要，标题或图例。
+<details>	挂件
+            可以展开，也可以隐藏。
+            <summary>我是挂件中的一个内容元素</summary>
+<dialog>	对话框
+
+<menu>	目前主流浏览器并不支持 <menu> 标签。<menuitem>	元素
+
 <!--===========================元素11.Web 组件================================-->
-<content>	HTML <content> 元素— Web 组件 的技术套件的废弃部分 — 用于 Shadow DOM 内部作为 insertion point，并且不可用于任何正常的 HTML，现在已被 <slot> 元素代替，它在 DOM 中创建一个位置，Shadow DOM 会插入这里。
-    <element>	<element>元素被定义在最新的 HTML DOM 元素中。</element>
-    <shadow>	HTML <shadow> 元素 — Web 组件技术套件的废弃部分 — 目的是用作 Shadow DOM insertion point。如果你在 shadow host 下面创建了多个 shadow root，你就可能已经使用了它。在正常的 HTML 没有任何用处。
-    <slot>	HTML <slot> 元素 ，作为 Web Components 技术套件的一部分，是
-    <template>	HTML内容模板（<template>）元素是一种用于保存客户端内容机制，该内容在加载页面时不会呈现，但随后可以(原文为 may be)在运行时使用JavaScript实例化。
+<slot>	
+          HTML <slot> 元素 — Web 组件的技术套件中一部分 — 是 Web 组件中的一个占位符，
+             可以用来插入自己的标记文本，让你创建单独的 DOM 树并将它们展示在一起。
+             
+<template>   用于保存客户端内容的机制，当内容被加载时，不会被渲染，但可以在运行时使用 JavaScript 进行实例化
+    
+    
 <!--===========================元素12.过时的和弃用的元素=======================-->
 元素	    描述
 <acronym>	HTML Acronym  元素 (<acronym>) 允许作者明确地声明一个字符序列,，它们构成一个单词的首字母缩写或简略语。
